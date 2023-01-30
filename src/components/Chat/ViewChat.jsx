@@ -21,7 +21,6 @@ function ViewChat({ userChat, loading }) {
     <>
       <div className="flex flex-col gap-4 p-8 md:p-20" ref={parent}>
         {/* User sms */}
-
         {userChat.map((chat, i) => (
           <div
             key={i}
