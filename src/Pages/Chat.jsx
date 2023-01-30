@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import ChatInput from "../components/Chat/ChatInput";
 import ViewChat from "../components/Chat/ViewChat";
 import Navbar from "../components/Navbar/Navbar";
+import { useMutation } from "@tanstack/react-query";
+import { fetchResponse } from "../api";
 
 function Chat() {
   const [userChat, setUserChat] = useState([]);
+
+  const mutation = useMutation({
+    mutationFn: () => {
+      console.log(userChat);
+      return fetchResponse(userChat);
+    },
+    onSuccess: (data) => setUserChat((prev)=>[...prev, {sender:"ai", message}]),
+  });
   const sendMessage = async (message) => {
     await Promise.resolve(setUserChat((prev) => [...prev, message]));
+    mutation.mutate();
   };
+
   return (
     <>
       <div
