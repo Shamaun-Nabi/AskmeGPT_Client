@@ -25,7 +25,7 @@ function Hero() {
                 </div>
                 <h4 className="mt-4 md:mt-14 text-2xl">A New Innovation</h4>
                 <h2 className="text-2xl md:text-6xl font-bold mt-3 ">
-                  ASK ME 2.0 ChatGPT Feel
+                  ASK ME 2.0 GET ChatGPT Feel...
                 </h2>
                 <div className="mt-4">
                   <button
