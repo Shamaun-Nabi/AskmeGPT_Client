@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700&family=Sofia+Sans:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Sans", sans-serif;
+}
+.gradient-01 {
+  width: 600px;
+  height: 300px;
+  background-color: rgba(216, 38, 252, 0.301);
+  top: 0;
+  position: absolute;
+  filter: blur(175px);
+}
+.gradient-02 {
+  width: 600px;
+  height: 300px;
+  background-color: rgba(38, 209, 252, 0.377);
+  right: -6rem;
+  position: absolute;
+  filter: blur(190px);
+}
