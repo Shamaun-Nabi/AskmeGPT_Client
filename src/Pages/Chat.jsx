@@ -13,7 +13,11 @@ function Chat() {
       console.log(userChat);
       return fetchResponse(userChat);
     },
-    onSuccess: (data) => setUserChat((prev)=>[...prev, {sender:"ai", message}]),
+    onSuccess: (data) =>
+      setUserChat((prev) => [
+        ...prev,
+        { sender: "ai", message: data.message.replace(/^\n\n/, "") },
+      ]),
   });
   const sendMessage = async (message) => {
     await Promise.resolve(setUserChat((prev) => [...prev, message]));
@@ -28,17 +32,19 @@ function Chat() {
         }}
         className=" bg-center bg-no-repeat bg-cover text-white h-screen  justify-between align-middle relative overflow-hidden flex flex-col"
       >
-        <Navbar />
+        
         <div className="w-full h-full backdrop-blur-md">
+        {/* <Navbar/> */}
           {/* <div className="gradient-01 absolute z-0"></div>
         <div className="gradient-02 absolute z-0"></div> */}
           {/* Body */}
-          <div className="h-[90%] overflow-auto w-full self-center">
+          <div className="h-[85%] overflow-auto w-full self-center ">
+          <Navbar/>
             <ViewChat userChat={userChat} />
           </div>
           {/* input */}
-          <div className="w-full  self-center">
-            <ChatInput sendMessage={sendMessage} />
+          <div className="w-full self-center">
+            <ChatInput sendMessage={sendMessage} loading={mutation.isLoading} />
           </div>
         </div>
       </div>

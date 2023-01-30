@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <nav className="relative w-full flex flex-wrap items-center justify-between py-3 fixed-top bg-gray-900 text-gray-200 shadow-lg navbar navbar-expand-md navbar-light">
+      <nav className=" w-full items-center  justify-between py-3  bg-gray-900 text-gray-200 shadow-lg navbar navbar-expand-md navbar-light">
         <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
           <button
             className="navbar-toggler text-gray-200 border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
@@ -61,7 +61,7 @@ function Navbar() {
                 />
               </a>
               <ul
-                className="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
+                className="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1  m-0 bg-clip-padding border-none left-auto right-0"
                 aria-labelledby="dropdownMenuButton2"
               >
                 <li>
