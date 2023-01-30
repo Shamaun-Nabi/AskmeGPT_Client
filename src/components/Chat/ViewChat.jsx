@@ -5,6 +5,7 @@ import { Comment } from "react-loader-spinner";
 function ViewChat({ userChat, loading }) {
   const bottomRef = useRef(null);
   const parent = useRef(null);
+  console.log(userChat);
 
   // for scroll
   useEffect(() => {
@@ -16,7 +17,9 @@ function ViewChat({ userChat, loading }) {
   }, [parent]);
 
   const aiStyle =
-    "max-w-[80%]  bg-slate-600 text-white break-words mr-auto px-4 py-2  rounded-bl-none rounded-md overflow-auto text-justify";
+    "max-w-[80%]  bg-[#9E1F64]  text-white break-words mr-auto px-4 py-2  rounded-bl-none rounded-md overflow-auto text-justify";
+  const userStyle =
+    "max-w-[80%] bg-slate-800 break-words self-end px-4 py-2  rounded-bl-none rounded-md p-2 overflow-auto text-justify";
   return (
     <>
       <div className="flex flex-col gap-4 p-8 md:p-20" ref={parent}>
@@ -24,9 +27,7 @@ function ViewChat({ userChat, loading }) {
         {userChat.map((chat, i) => (
           <div
             key={i}
-            className={`max-w-[80%] bg-slate-800 break-words self-end px-4 py-2  rounded-bl-none rounded-md p-2 overflow-auto text-justify ${
-              chat.sender === "ai" && aiStyle
-            }`}
+            className={` ${chat.sender === "ai" ? aiStyle : userStyle}`}
           >
             <pre className="whitespace-pre-wrap">
               <span>{chat.message}</span>
