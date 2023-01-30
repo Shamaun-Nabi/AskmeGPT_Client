@@ -4,6 +4,7 @@ import ViewChat from "../components/Chat/ViewChat";
 import Navbar from "../components/Navbar/Navbar";
 import { useMutation } from "@tanstack/react-query";
 import { fetchResponse } from "../api";
+import Footer from "../components/footer/Footer";
 
 function Chat() {
   const [userChat, setUserChat] = useState([]);
@@ -32,20 +33,20 @@ function Chat() {
         }}
         className=" bg-center bg-no-repeat bg-cover text-white h-screen  justify-between align-middle relative overflow-hidden flex flex-col"
       >
-        
         <div className="w-full h-full backdrop-blur-md">
-        {/* <Navbar/> */}
+          {/* <Navbar/> */}
           {/* <div className="gradient-01 absolute z-0"></div>
         <div className="gradient-02 absolute z-0"></div> */}
           {/* Body */}
-          <div className="h-[85%] overflow-auto w-full self-center ">
-          <Navbar/>
-            <ViewChat userChat={userChat} />
+          <div className="h-[80%] overflow-auto w-full self-center ">
+            <Navbar />
+            <ViewChat userChat={userChat} loading={mutation.isLoading} />
           </div>
           {/* input */}
           <div className="w-full self-center">
-            <ChatInput sendMessage={sendMessage} loading={mutation.isLoading} />
+            <ChatInput sendMessage={sendMessage}  />
           </div>
+          <Footer />
         </div>
       </div>
     </>

@@ -4,8 +4,17 @@ import { FcGoogle } from "react-icons/fc";
 import { BiCheckDouble } from "react-icons/bi";
 import { MdVerified } from "react-icons/md";
 import { Link } from "react-router-dom";
+import confetti from "canvas-confetti";
 
 function Hero() {
+  const welcomeMsg = () => {
+    console.log("click");
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+  };
   return (
     <>
       <div className=" h-screen w-full bg-gradient-to-bl from-current via-slate-900 to-black text-white">
@@ -38,6 +47,7 @@ function Hero() {
                   </button>
                   <Link to={"/chat"}>
                     <button
+                      onClick={welcomeMsg}
                       data-mdb-ripple="true"
                       data-mdb-ripple-color="light"
                       className="bg-slate-800  mt-2 px-4 py-2 shadow-xl rounded-md flex gap-2"
